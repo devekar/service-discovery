@@ -1,4 +1,4 @@
-package com.vaibhav.zookper.service_discovery.serviceA;
+package com.vaibhav.zookeeper.service_discovery.serviceB;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -12,9 +12,9 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan
 @EnableDiscoveryClient
 @EnableAutoConfiguration
-public class ServiceApplication extends SpringBootServletInitializer {
+public class ServiceBApplication extends SpringBootServletInitializer {
 
     public static void main( String[] args ) {
-        SpringApplication.run(ServiceApplication.class, args);
+        SpringApplication.run(ServiceBApplication.class, args);
     }
 }

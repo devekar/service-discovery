@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vaibhav.zookeeper.service_discovery.serviceB.config.ServiceRegistry;
+import com.vaibhav.zookeeper.service_discovery.serviceB.util.ServiceBHttpClient;
 
 @RestController
 public class ServiceBController {
@@ -22,9 +23,13 @@ public class ServiceBController {
     @Autowired
     private ServiceRegistry serviceRegistry;
     
+    @Autowired
+    private ServiceBHttpClient serviceBHttpClient;
+    
     @RequestMapping(value="/message", method=RequestMethod.GET)
-    public Map<String, String> getMessage() throws IllegalAccessException {
-        return serviceRegistry.callService();
+    public Map<String, String> getMessage() throws Exception {
+        String url = serviceRegistry.getServiceUrl();
+        return serviceBHttpClient.getMessage(url);
     }
     
     @ResponseStatus(value=HttpStatus.INTERNAL_SERVER_ERROR) 
