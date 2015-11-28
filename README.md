@@ -12,7 +12,6 @@ Service B is a client of service A. We will have multiple instances of service A
 ##Libraries
 Apache Zookeeper  
 Apache Curator  
-Archaius  
 Spring Cloud  
 
 ##References

@@ -13,7 +13,6 @@
     <spring.cloud.version>1.0.2.RELEASE</spring.cloud.version>
     <spring.cloud.zookeeper.version>1.0.0.M2</spring.cloud.zookeeper.version>
     <curator.version>2.9.0</curator.version>
-    <archaius.version>0.7.1</archaius.version>
   </properties>
 
   <parent>
@@ -31,12 +30,6 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
-      <exclusions>
-        <exclusion>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-logging</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -79,17 +72,6 @@
       <groupId>org.apache.curator</groupId>
       <artifactId>curator-x-discovery</artifactId>
       <version>${curator.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>com.netflix.archaius</groupId>
-      <artifactId>archaius-core</artifactId>
-      <version>${archaius.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.netflix.archaius</groupId>
-      <artifactId>archaius-zookeeper</artifactId>
-      <version>${archaius.version}</version>
     </dependency>
   </dependencies>
 
