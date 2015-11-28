@@ -28,7 +28,7 @@ public class ServiceBController {
     
     @RequestMapping(value="/message", method=RequestMethod.GET)
     public Map<String, String> getMessage() throws Exception {
-        String url = serviceRegistry.getServiceUrl();
+        String url = serviceRegistry.getServiceUrl();        
         return serviceBHttpClient.getMessage(url);
     }
     

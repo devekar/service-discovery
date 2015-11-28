@@ -19,8 +19,16 @@ public class ServiceRegistry {
         // Will cycle through available instances
         ServiceInstance<String> instance = serviceProvider.getInstance();
         
+        if(instance == null) {
+            throw new IllegalAccessException("No available insatnces of service A.");
+        }
+        
         String url = instance.buildUriSpec() + "/serviceA/message";
         logger.debug("URL: " + url);
+        
+        if(url == null || url.isEmpty()) {
+            throw new IllegalAccessException("Url for service A instance is empty.");
+        }
         
         return url;
     }
